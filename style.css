@@ -220,7 +220,7 @@ h2 {
 .slider {
   width: 100px;
     height: 100px;
-  max-width: 500px;
+  max-width: 100px;
   margin: auto;
   overflow: hidden;
   border-radius: 10px;
