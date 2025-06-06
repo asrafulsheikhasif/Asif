@@ -218,8 +218,9 @@ h2 {
     }
 }
 .slider {
-  width: 90%;
-  max-width: 200px;
+  width: 100px;
+    height: 100px;
+  max-width: 500px;
   margin: auto;
   overflow: hidden;
   border-radius: 10px;
