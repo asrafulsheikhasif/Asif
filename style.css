@@ -227,13 +227,13 @@ h2 {
 
 .slides {
   display: flex;
-  width: 300%;
+  width: 100%;
   animation: slide 9s infinite;
 }
 
 .slides img {
   width: 100%;
-  height: auto;
+  height: 100%;
 }
 
 @keyframes slide {
