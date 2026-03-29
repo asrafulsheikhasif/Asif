@@ -1,0 +1,1124 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Asraful Sheikh Asif - Creative Freelancer, Graphics Designer, 3D Animator, Video Editor & Content Creator from Bangladesh.">
+<meta name="keywords" content="Asraful Sheikh Asif, Asif, freelancer, graphics design, 3D animation, video editing, Bangladesh, Cox's Bazar">
+<meta name="author" content="Asraful Sheikh Asif">
+<meta property="og:title" content="Asraful Sheikh Asif | Creative Freelancer & Content Creator">
+<meta property="og:description" content="Official portfolio of Asraful Sheikh Asif — Creative Freelancer, Graphics Designer & Content Creator from Bangladesh.">
+<title>Asraful Sheikh Asif | Creative Freelancer</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+/* ============================================================
+   DESIGN TOKENS — Edit colors here
+   ============================================================ */
+:root {
+  --accent:   #00e5b0;
+  --accent2:  #7c3aed;
+  --amber:    #f59e0b;
+  --red:      #ef4444;
+  --grad:     linear-gradient(135deg, #00e5b0 0%, #7c3aed 100%);
+  --grad2:    linear-gradient(135deg, #f59e0b 0%, #ef4444 100%);
+  --ease:     cubic-bezier(.4,0,.2,1);
+  --dur:      .32s;
+}
+[data-theme="dark"] {
+  --bg:       #07101f;
+  --bg2:      #0c1a30;
+  --bg3:      #112040;
+  --card:     rgba(255,255,255,.035);
+  --card2:    rgba(255,255,255,.07);
+  --border:   rgba(255,255,255,.07);
+  --txt:      #dde4f0;
+  --txt2:     #7a8ba0;
+  --txt3:     #38475a;
+  --glass:    rgba(7,16,31,.88);
+}
+[data-theme="light"] {
+  --bg:       #f3f6fc;
+  --bg2:      #e8edf7;
+  --bg3:      #dce4f2;
+  --card:     rgba(0,0,0,.035);
+  --card2:    rgba(0,0,0,.07);
+  --border:   rgba(0,0,0,.09);
+  --txt:      #0e1a2b;
+  --txt2:     #526070;
+  --txt3:     #a0adb8;
+  --glass:    rgba(243,246,252,.92);
+}
+
+/* ============================================================
+   BASE
+   ============================================================ */
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;font-size:16px;}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--txt);overflow-x:hidden;line-height:1.65;transition:background var(--dur) var(--ease),color var(--dur) var(--ease);}
+a{color:inherit;text-decoration:none;}
+img{max-width:100%;display:block;}
+ul{list-style:none;}
+button{cursor:pointer;border:none;background:none;font-family:inherit;}
+::-webkit-scrollbar{width:4px;}
+::-webkit-scrollbar-track{background:var(--bg);}
+::-webkit-scrollbar-thumb{background:var(--accent2);border-radius:4px;}
+
+/* ============================================================
+   LOADING SCREEN
+   ============================================================ */
+#loader{
+  position:fixed;inset:0;z-index:9999;
+  background:#07101f;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2rem;
+  transition:opacity .6s,visibility .6s;
+}
+#loader.out{opacity:0;visibility:hidden;pointer-events:none;}
+.ld-ring{width:56px;height:56px;border:3px solid rgba(0,229,176,.15);border-top-color:var(--accent);border-radius:50%;animation:spin .9s linear infinite;}
+.ld-name{font-family:'Syne',sans-serif;font-size:1.3rem;font-weight:800;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;letter-spacing:.06em;}
+@keyframes spin{to{transform:rotate(360deg);}}
+
+/* ============================================================
+   NAVBAR
+   ============================================================ */
+#nav{
+  position:fixed;top:0;left:0;right:0;z-index:1000;
+  height:68px;padding:0 6%;
+  display:flex;align-items:center;justify-content:space-between;
+  backdrop-filter:blur(22px) saturate(1.5);
+  background:var(--glass);
+  border-bottom:1px solid var(--border);
+  transition:all var(--dur) var(--ease);
+}
+.nav-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:1.1rem;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.nav-links{display:flex;gap:2rem;}
+.nav-links a{font-size:.83rem;font-weight:500;color:var(--txt2);position:relative;transition:color var(--dur);}
+.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:var(--grad);border-radius:2px;transition:width var(--dur);}
+.nav-links a:hover{color:var(--accent);}
+.nav-links a:hover::after{width:100%;}
+.nav-r{display:flex;align-items:center;gap:.9rem;}
+.theme-btn{
+  width:38px;height:38px;border-radius:50%;
+  border:1px solid var(--border);background:var(--card2);
+  color:var(--txt2);font-size:.85rem;
+  display:flex;align-items:center;justify-content:center;
+  transition:all var(--dur);
+}
+.theme-btn:hover{border-color:var(--accent);color:var(--accent);}
+.hbg{display:none;flex-direction:column;gap:4px;width:28px;}
+.hbg span{display:block;height:2px;border-radius:2px;background:var(--txt);transition:all var(--dur);}
+/* mobile nav */
+.mob-nav{
+  display:none;
+  position:fixed;top:68px;left:0;right:0;z-index:999;
+  background:var(--glass);backdrop-filter:blur(22px);
+  border-bottom:1px solid var(--border);
+  padding:1.25rem 6%;flex-direction:column;gap:1rem;
+}
+.mob-nav.open{display:flex;}
+.mob-nav a{font-size:.95rem;font-weight:500;color:var(--txt2);transition:color var(--dur);}
+.mob-nav a:hover{color:var(--accent);}
+
+/* ============================================================
+   SECTION COMMONS
+   ============================================================ */
+.sec{padding:110px 6%;}
+.wrap{max-width:1180px;margin:0 auto;}
+.sec-tag{display:inline-block;font-size:.7rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:.65rem;}
+.sec-h{font-family:'Syne',sans-serif;font-size:clamp(1.9rem,4.5vw,3rem);font-weight:800;line-height:1.1;margin-bottom:1.1rem;}
+.sec-h span{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.sec-sub{color:var(--txt2);font-size:.92rem;max-width:520px;margin-bottom:3rem;line-height:1.75;}
+
+/* ============================================================
+   REVEAL ANIMATION
+   ============================================================ */
+.rv{opacity:0;transform:translateY(26px);transition:opacity .65s var(--ease),transform .65s var(--ease);}
+.rv.on{opacity:1;transform:none;}
+
+/* ============================================================
+   BUTTONS
+   ============================================================ */
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.78rem 1.8rem;border-radius:99px;font-weight:600;font-size:.87rem;transition:all var(--dur);cursor:pointer;}
+.btn-g{background:var(--grad);color:#fff;}
+.btn-g:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(0,229,176,.22);}
+.btn-o{background:var(--card2);border:1px solid var(--border);color:var(--txt);}
+.btn-o:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px);}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+#home{
+  min-height:100vh;display:flex;align-items:center;
+  position:relative;overflow:hidden;padding-top:130px;
+}
+/* Animated BG */
+.hero-bg{position:absolute;inset:0;z-index:0;pointer-events:none;}
+.orb{position:absolute;border-radius:50%;filter:blur(90px);animation:drift 9s ease-in-out infinite alternate;}
+.o1{width:560px;height:560px;background:#7c3aed;opacity:.14;top:-140px;right:-80px;animation-delay:0s;}
+.o2{width:380px;height:380px;background:#00e5b0;opacity:.12;bottom:-120px;left:-60px;animation-delay:-3.5s;}
+.o3{width:260px;height:260px;background:#f59e0b;opacity:.1;top:38%;left:38%;animation-delay:-7s;}
+@keyframes drift{from{transform:translate(0,0) scale(1);}to{transform:translate(28px,-36px) scale(1.07);}}
+
+.hero-inner{
+  display:grid;grid-template-columns:1fr auto;
+  gap:5rem;align-items:center;
+  position:relative;z-index:1;width:100%;
+}
+/* Text side */
+.hero-live{
+  display:inline-flex;align-items:center;gap:.55rem;
+  padding:.38rem 1rem;
+  background:var(--card2);border:1px solid var(--border);border-radius:99px;
+  font-size:.74rem;font-weight:500;color:var(--accent);
+  margin-bottom:1.6rem;
+}
+.live-dot{width:7px;height:7px;border-radius:50%;background:var(--accent);animation:blink 1.3s ease-in-out infinite;}
+@keyframes blink{0%,100%{opacity:1;}50%{opacity:.25;}}
+.hero-name{font-family:'Syne',sans-serif;font-size:clamp(2.8rem,7vw,5rem);font-weight:800;line-height:1.02;margin-bottom:.9rem;}
+.hero-name .g{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.hero-role{font-size:1.05rem;color:var(--txt2);margin-bottom:2rem;font-weight:400;}
+.hero-pills{display:flex;flex-wrap:wrap;gap:.55rem;margin-bottom:2.5rem;}
+.pill{padding:.28rem .85rem;background:var(--card);border:1px solid var(--border);border-radius:99px;font-size:.75rem;color:var(--txt2);transition:all var(--dur);}
+.pill:hover{border-color:var(--accent);color:var(--accent);}
+.hero-btns{display:flex;gap:.9rem;flex-wrap:wrap;}
+
+/* Photo side */
+.hero-photo{position:relative;flex-shrink:0;}
+.photo-glow{position:absolute;inset:-18px;background:var(--grad);border-radius:50%;filter:blur(38px);opacity:.28;animation:gp 3.5s ease-in-out infinite alternate;}
+@keyframes gp{from{opacity:.18;}to{opacity:.4;}}
+.photo-ring{
+  position:relative;z-index:1;
+  width:300px;height:300px;border-radius:50%;
+  padding:3px;background:var(--grad);
+}
+.photo-inner{width:100%;height:100%;border-radius:50%;overflow:hidden;background:var(--bg2);}
+.photo-inner img{width:100%;height:100%;object-fit:cover;}
+
+/* Social strip beside photo */
+.hero-soc{
+  position:absolute;right:-52px;top:50%;transform:translateY(-50%);
+  display:flex;flex-direction:column;gap:.6rem;
+}
+.soc-a{
+  width:34px;height:34px;border-radius:50%;
+  background:var(--card2);border:1px solid var(--border);
+  display:flex;align-items:center;justify-content:center;
+  font-size:.78rem;color:var(--txt2);
+  transition:all var(--dur);
+}
+.soc-a:hover{background:var(--grad);color:#fff;border-color:transparent;transform:translateX(-3px);}
+
+/* ============================================================
+   SLIDER
+   ============================================================ */
+#slider{background:var(--bg2);padding:80px 6%;}
+.slider-box{position:relative;overflow:hidden;border-radius:18px;max-height:460px;aspect-ratio:16/7;}
+.slides{display:flex;height:100%;transition:transform .75s var(--ease);}
+.slide{min-width:100%;height:100%;position:relative;background:var(--bg3);}
+.slide img{width:100%;height:100%;object-fit:cover;}
+.slide-shade{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.6) 0%,transparent 55%);}
+.slide-cap{position:absolute;bottom:1.8rem;left:2rem;font-family:'Syne',sans-serif;font-size:1.4rem;font-weight:700;color:#fff;}
+.s-arrow{
+  position:absolute;top:50%;transform:translateY(-50%);
+  width:44px;height:44px;border-radius:50%;
+  background:rgba(255,255,255,.12);backdrop-filter:blur(8px);
+  border:1px solid rgba(255,255,255,.2);
+  color:#fff;font-size:.88rem;
+  display:flex;align-items:center;justify-content:center;
+  transition:all var(--dur);z-index:10;
+}
+.s-arrow:hover{background:var(--accent);color:#000;border-color:var(--accent);}
+.s-prev{left:1.1rem;}.s-next{right:1.1rem;}
+.s-dots{display:flex;justify-content:center;gap:.45rem;margin-top:1.1rem;}
+.s-dot{width:7px;height:7px;border-radius:99px;background:var(--border);cursor:pointer;transition:all var(--dur);}
+.s-dot.on{width:26px;background:var(--accent);}
+
+/* ============================================================
+   ABOUT
+   ============================================================ */
+#about{background:var(--bg);}
+.about-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:5rem;align-items:center;}
+.about-photo{position:relative;}
+.about-frame{border-radius:22px;overflow:hidden;aspect-ratio:4/5;border:1px solid var(--border);}
+.about-frame img{width:100%;height:100%;object-fit:cover;}
+.about-chip{
+  position:absolute;bottom:-16px;right:-16px;
+  background:var(--grad);border-radius:14px;
+  padding:1rem 1.3rem;color:#fff;text-align:center;
+  box-shadow:0 10px 30px rgba(0,229,176,.25);
+}
+.chip-n{font-family:'Syne',sans-serif;font-size:1.9rem;font-weight:800;line-height:1;}
+.chip-l{font-size:.7rem;opacity:.85;margin-top:.1rem;}
+.about-stats{display:grid;grid-template-columns:1fr 1fr;gap:.9rem;margin-top:2.5rem;}
+.stat{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:1.1rem;transition:all var(--dur);}
+.stat:hover{border-color:var(--accent);transform:translateY(-3px);}
+.stat-n{font-family:'Syne',sans-serif;font-size:1.6rem;font-weight:800;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.stat-l{font-size:.75rem;color:var(--txt2);}
+.about-txt p{color:var(--txt2);font-size:.92rem;line-height:1.8;margin-bottom:1rem;}
+
+/* ============================================================
+   SKILLS
+   ============================================================ */
+#skills{background:var(--bg2);}
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.3rem;}
+.sk-card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:1.6rem;transition:all var(--dur);}
+.sk-card:hover{border-color:var(--accent);transform:translateY(-4px);box-shadow:0 18px 36px rgba(0,229,176,.06);}
+.sk-ico{width:46px;height:46px;border-radius:12px;background:var(--card2);display:flex;align-items:center;justify-content:center;font-size:1.2rem;color:var(--txt2);margin-bottom:.9rem;transition:all var(--dur);}
+.sk-card:hover .sk-ico{background:var(--grad);color:#fff;}
+.sk-name{font-family:'Syne',sans-serif;font-size:.92rem;font-weight:700;margin-bottom:.65rem;}
+.sk-bar-bg{height:5px;background:var(--card2);border-radius:99px;overflow:hidden;}
+.sk-bar{height:100%;border-radius:99px;background:var(--grad);width:0;transition:width 1.4s var(--ease);}
+.sk-row{display:flex;justify-content:space-between;font-size:.7rem;color:var(--txt2);margin-bottom:.35rem;}
+
+/* ============================================================
+   PROJECTS
+   ============================================================ */
+#projects{background:var(--bg);}
+
+/*
+  ============================================================
+  HOW TO ADD / EDIT PROJECTS:
+  Find the `PROJECTS_DATA` array in the <script> section below.
+  Each object:
+  {
+    title:    "Project Title",
+    cat:      "Category Label",
+    desc:     "Short description",
+    videoId:  "YouTube video ID (e.g. dQw4w9WgXcQ)",
+            — leave "" if no video, thumbnail won't show
+    link:     "https://youtube.com/..."   ← click goes here
+  }
+  ============================================================
+*/
+.cards-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;}
+.p-card{background:var(--card);border:1px solid var(--border);border-radius:18px;overflow:hidden;transition:all var(--dur);cursor:pointer;}
+.p-card:hover{border-color:var(--accent2);transform:translateY(-5px);box-shadow:0 22px 44px rgba(124,58,237,.09);}
+.p-thumb{position:relative;aspect-ratio:16/9;overflow:hidden;background:var(--bg3);}
+.p-thumb img{width:100%;height:100%;object-fit:cover;transition:transform .5s;}
+.p-card:hover .p-thumb img{transform:scale(1.06);}
+.no-thumb{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.5rem;color:var(--txt3);}
+.no-thumb i{font-size:2rem;color:var(--accent2);opacity:.5;}
+.no-thumb span{font-size:.7rem;}
+.p-play{position:absolute;inset:0;background:rgba(0,0,0,.42);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity var(--dur);}
+.p-card:hover .p-play{opacity:1;}
+.play-circle{width:50px;height:50px;background:var(--grad);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1rem;padding-left:3px;}
+.p-info{padding:1.1rem;}
+.p-cat{font-size:.67rem;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:var(--accent);margin-bottom:.3rem;}
+.p-title{font-family:'Syne',sans-serif;font-size:.9rem;font-weight:700;margin-bottom:.3rem;}
+.p-desc{font-size:.78rem;color:var(--txt2);line-height:1.65;}
+
+/* ============================================================
+   APPS
+   ============================================================ */
+#apps{background:var(--bg2);}
+
+/*
+  ============================================================
+  HOW TO ADD / EDIT APPS:
+  Find `APPS_DATA` in <script> below.
+  Each object:
+  {
+    name:    "App Name",
+    desc:    "Description",
+    icon:    "fa-solid fa-trophy",   ← Font Awesome icon class
+    grad:    "var(--grad)",          ← gradient CSS value
+    tags:    ["Android","Free"],
+    apk:     "filename.apk"          ← APK file name (place in same folder)
+  }
+  ============================================================
+*/
+.apps-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:1.8rem;}
+.app-card{background:var(--card);border:1px solid var(--border);border-radius:22px;padding:1.9rem;display:flex;flex-direction:column;gap:1.1rem;transition:all var(--dur);}
+.app-card:hover{border-color:var(--amber);transform:translateY(-5px);box-shadow:0 22px 44px rgba(245,158,11,.07);}
+.app-ico{width:64px;height:64px;border-radius:18px;display:flex;align-items:center;justify-content:center;font-size:1.8rem;color:#fff;}
+.app-name{font-family:'Syne',sans-serif;font-size:1.15rem;font-weight:800;}
+.app-desc{font-size:.83rem;color:var(--txt2);line-height:1.75;}
+.app-tags{display:flex;gap:.5rem;flex-wrap:wrap;}
+.app-tag{padding:.2rem .65rem;background:var(--card2);border-radius:99px;font-size:.68rem;color:var(--txt2);}
+.dl-btn{display:inline-flex;align-items:center;gap:.55rem;padding:.7rem 1.4rem;background:var(--grad);color:#fff;border-radius:99px;font-weight:600;font-size:.82rem;align-self:flex-start;transition:all var(--dur);}
+.dl-btn:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(0,229,176,.22);}
+
+/* ============================================================
+   COURSES / SERVICES
+   ============================================================ */
+#courses{background:var(--bg);}
+
+/*
+  ============================================================
+  HOW TO ADD / EDIT COURSES:
+  Find `COURSES_DATA` in <script> below.
+  Each object:
+  {
+    title:   "Course Title",
+    badge:   "Course" | "Service" | "Coming Soon",
+    desc:    "Short description",
+    videoId: "YouTube video ID",   ← thumbnail auto-loads
+    link:    "https://..."
+  }
+  ============================================================
+*/
+
+/* ============================================================
+   GALLERY
+   ============================================================ */
+#gallery{background:var(--bg2);}
+
+/*
+  ============================================================
+  HOW TO ADD IMAGES & VIDEOS TO GALLERY:
+  Find `GALLERY_DATA` in <script> below.
+  Each object:
+  {
+    type:    "image" | "video",
+    src:     "filename.jpg" or "filename.mp4",
+            (place the file in the same folder as index.html)
+    caption: "Label shown on hover"
+  }
+
+  For YouTube videos use:
+  {
+    type:    "youtube",
+    src:     "VIDEO_ID_HERE",
+    caption: "Caption"
+  }
+  ============================================================
+*/
+.g-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.9rem;}
+.g-item{border-radius:14px;overflow:hidden;aspect-ratio:4/3;position:relative;cursor:pointer;background:var(--bg3);}
+.g-item img,.g-item video,.g-item iframe{width:100%;height:100%;object-fit:cover;transition:transform .5s;}
+.g-item:hover img,.g-item:hover video{transform:scale(1.07);}
+.g-over{position:absolute;inset:0;background:rgba(0,0,0,.5);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.4rem;opacity:0;transition:opacity var(--dur);color:#fff;}
+.g-item:hover .g-over{opacity:1;}
+.g-over i{font-size:1.5rem;}
+.g-over span{font-size:.72rem;text-align:center;padding:0 .5rem;}
+
+/* ============================================================
+   CONTACT
+   ============================================================ */
+#contact{background:var(--bg);}
+.contact-grid{display:grid;grid-template-columns:1fr 1.35fr;gap:4rem;}
+.c-info{display:flex;flex-direction:column;gap:1.3rem;}
+.c-row{display:flex;gap:.85rem;align-items:flex-start;}
+.c-ico{width:44px;height:44px;flex-shrink:0;background:var(--card2);border:1px solid var(--border);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:.95rem;color:var(--accent);transition:all var(--dur);}
+.c-row:hover .c-ico{background:var(--grad);color:#fff;border-color:transparent;}
+.c-lbl{font-size:.7rem;color:var(--txt2);margin-bottom:.12rem;}
+.c-val{font-weight:500;font-size:.9rem;}
+.c-val a{color:var(--txt);transition:color var(--dur);}
+.c-val a:hover{color:var(--accent);}
+.c-links{display:flex;flex-wrap:wrap;gap:.55rem;margin-top:.6rem;}
+.c-link{display:flex;align-items:center;gap:.42rem;padding:.46rem .95rem;background:var(--card);border:1px solid var(--border);border-radius:99px;font-size:.76rem;color:var(--txt2);transition:all var(--dur);}
+.c-link i{font-size:.82rem;}
+.c-link:hover{border-color:var(--accent);color:var(--accent);}
+.c-link.wa:hover{border-color:#25D366;color:#25D366;}
+.c-link.em:hover{border-color:var(--accent2);color:var(--accent2);}
+/* Form */
+.c-form{display:flex;flex-direction:column;gap:1.1rem;}
+.f-grp{display:flex;flex-direction:column;gap:.4rem;}
+.f-grp label{font-size:.75rem;font-weight:500;color:var(--txt2);}
+.f-input,.f-ta{padding:.82rem 1rem;background:var(--card);border:1px solid var(--border);border-radius:12px;color:var(--txt);font-size:.87rem;font-family:'Inter',sans-serif;outline:none;transition:all var(--dur);resize:none;}
+.f-input:focus,.f-ta:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(0,229,176,.1);}
+.f-ta{min-height:130px;}
+.f-msg{font-size:.78rem;padding:.65rem;border-radius:9px;display:none;}
+.f-msg.ok{background:rgba(0,229,176,.08);color:var(--accent);display:block;}
+.f-msg.err{background:rgba(239,68,68,.08);color:#ef4444;display:block;}
+.f-submit{padding:.82rem 2rem;background:var(--grad);color:#fff;border-radius:99px;font-weight:600;font-size:.88rem;align-self:flex-start;transition:all var(--dur);}
+.f-submit:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(0,229,176,.22);}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+footer{background:var(--bg2);border-top:1px solid var(--border);padding:2.8rem 6%;}
+.foot-inner{max-width:1180px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.5rem;}
+.foot-brand{}
+.foot-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:1rem;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.foot-copy{font-size:.76rem;color:var(--txt2);margin-top:.2rem;}
+.foot-soc{display:flex;gap:.55rem;}
+.foot-soc a{width:34px;height:34px;background:var(--card);border:1px solid var(--border);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.78rem;color:var(--txt2);transition:all var(--dur);}
+.foot-soc a:hover{background:var(--grad);color:#fff;border-color:transparent;}
+
+/* ============================================================
+   SCROLL-TO-TOP
+   ============================================================ */
+#stt{position:fixed;bottom:1.8rem;right:1.8rem;z-index:900;width:42px;height:42px;background:var(--grad);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.85rem;opacity:0;visibility:hidden;transition:all var(--dur);box-shadow:0 8px 20px rgba(0,229,176,.28);}
+#stt.show{opacity:1;visibility:visible;}
+#stt:hover{transform:translateY(-3px);}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media(max-width:920px){
+  .hero-inner{grid-template-columns:1fr;text-align:center;gap:3rem;}
+  .hero-photo{order:-1;margin:0 auto;}
+  .hero-soc{position:static;flex-direction:row;justify-content:center;transform:none;margin-top:1.1rem;}
+  .hero-btns,.hero-pills{justify-content:center;}
+  .about-grid{grid-template-columns:1fr;}
+  .contact-grid{grid-template-columns:1fr;}
+  .nav-links{display:none;}
+  .hbg{display:flex;}
+}
+@media(max-width:600px){
+  .sec{padding:72px 5%;}
+  .photo-ring{width:220px;height:220px;}
+  .about-chip{right:0;bottom:-12px;}
+  .slider-box{aspect-ratio:4/3;max-height:none;}
+}
+</style>
+</head>
+<body>
+
+<!-- ==================== LOADER ==================== -->
+<div id="loader">
+  <div class="ld-ring"></div>
+  <div class="ld-name">Asraful Sheikh Asif</div>
+</div>
+
+<!-- ==================== NAVBAR ==================== -->
+<nav id="nav">
+  <div class="nav-logo">Asif</div>
+  <ul class="nav-links">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#apps">Apps</a></li>
+    <li><a href="#courses">Courses</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="nav-r">
+    <button class="theme-btn" id="themeBtn" title="Toggle Theme">
+      <i class="fa-solid fa-moon" id="themeIco"></i>
+    </button>
+    <button class="hbg" id="hbg" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="mob-nav" id="mobNav">
+  <a href="#home">Home</a>
+  <a href="#about">About</a>
+  <a href="#skills">Skills</a>
+  <a href="#projects">Projects</a>
+  <a href="#apps">Apps</a>
+  <a href="#courses">Courses</a>
+  <a href="#gallery">Gallery</a>
+  <a href="#contact">Contact</a>
+</div>
+
+<!-- ==================== HERO ==================== -->
+<section id="home" class="sec" style="padding-top:130px;">
+  <div class="hero-bg">
+    <div class="orb o1"></div>
+    <div class="orb o2"></div>
+    <div class="orb o3"></div>
+  </div>
+  <div class="wrap">
+    <div class="hero-inner">
+
+      <!-- LEFT: Text -->
+      <div>
+        <div class="hero-live"><span class="live-dot"></span>Available for Freelance Work</div>
+        <h1 class="hero-name">
+          <span class="g">Asraful</span><br>Sheikh Asif
+        </h1>
+        <p class="hero-role">Creative Freelancer &nbsp;|&nbsp; Content Creator</p>
+        <div class="hero-pills">
+          <span class="pill">Graphics Design</span>
+          <span class="pill">3D Animation</span>
+          <span class="pill">Video Editing</span>
+          <span class="pill">Web Design</span>
+          <span class="pill">AI Art</span>
+          <span class="pill">Digital Marketing</span>
+        </div>
+        <div class="hero-btns">
+          <a href="#projects" class="btn btn-g"><i class="fa-solid fa-eye"></i>View My Work</a>
+          <a href="#contact" class="btn btn-o"><i class="fa-solid fa-envelope"></i>Contact Me</a>
+        </div>
+      </div>
+
+      <!-- RIGHT: Photo + Social -->
+      <div class="hero-photo">
+        <div class="photo-glow"></div>
+        <!--
+          ============================================================
+          PROFILE IMAGE:
+          Replace "asif1.jpg" with your photo filename.
+          Place the image file in the same folder as index.html.
+          ============================================================
+        -->
+        <div class="photo-ring">
+          <div class="photo-inner">
+            <img src="asif1.jpg" alt="Asraful Sheikh Asif"
+                 onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#7c3aed,#00e5b0)'">
+          </div>
+        </div>
+        <!-- Social icons -->
+        <div class="hero-soc">
+          <a class="soc-a" href="https://www.youtube.com/@asifbro143" target="_blank" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          <a class="soc-a" href="https://www.facebook.com/share/1CFaGRrkEP/" target="_blank" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a class="soc-a" href="https://www.instagram.com/1___asif___1" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a class="soc-a" href="https://x.com/1___asif___1" target="_blank" title="Twitter / X"><i class="fa-brands fa-x-twitter"></i></a>
+          <a class="soc-a" href="https://tiktok.com/@asifbro143" target="_blank" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ==================== SLIDER ==================== -->
+<section id="slider" style="background:var(--bg2);padding:80px 6%;">
+  <div class="wrap">
+    <div class="sec-tag">Gallery Highlights</div>
+    <h2 class="sec-h">Photo <span>Showcase</span></h2>
+    <!--
+      ============================================================
+      SLIDER IMAGES:
+      Find SLIDER_DATA in <script> below.
+      Add { src:"filename.jpg", caption:"Caption" } for each slide.
+      ============================================================
+    -->
+    <div class="slider-box">
+      <div class="slides" id="slides"></div>
+      <button class="s-arrow s-prev" id="sPrev"><i class="fa-solid fa-chevron-left"></i></button>
+      <button class="s-arrow s-next" id="sNext"><i class="fa-solid fa-chevron-right"></i></button>
+    </div>
+    <div class="s-dots" id="sDots"></div>
+  </div>
+</section>
+
+<!-- ==================== ABOUT ==================== -->
+<section id="about" class="sec">
+  <div class="wrap">
+    <div class="about-grid rv">
+      <!-- Photo -->
+      <div class="about-photo">
+        <div class="about-frame">
+          <!--
+            Replace "asif1.jpg" with any image filename.
+          -->
+          <img src="asif1.jpg" alt="About Asif"
+               onerror="this.parentElement.style.background='var(--bg3)'">
+        </div>
+        <div class="about-chip">
+          <div class="chip-n">3+</div>
+          <div class="chip-l">Years of Creative Work</div>
+        </div>
+      </div>
+      <!-- Text -->
+      <div class="about-txt">
+        <div class="sec-tag">About Me</div>
+        <h2 class="sec-h">Hey, I'm <span>Asif</span></h2>
+        <p>I'm Asraful Sheikh Asif — a passionate creative freelancer from beautiful Bangladesh. With a background in BBA (Accounting) from National University, I found my true calling in the creative digital world.</p>
+        <p>I specialize in Graphics Design, 3D Animation using Blender, Video Editing, Web Design, AI Art, and Digital Marketing. I love transforming ideas into stunning visual experiences that leave a lasting impression.</p>
+        <p>When I'm not creating, you'll find me exploring Bangladesh — Cox's Bazar is my favorite escape, where the world's longest natural sea beach meets breathtaking sunsets that fuel my creative soul.</p>
+        <div class="about-stats">
+          <div class="stat"><div class="stat-n">50+</div><div class="stat-l">Projects Completed</div></div>
+          <div class="stat"><div class="stat-n">10k+</div><div class="stat-l">Social Followers</div></div>
+          <div class="stat"><div class="stat-n">7+</div><div class="stat-l">Skills Mastered</div></div>
+          <div class="stat"><div class="stat-n">100%</div><div class="stat-l">Client Satisfaction</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== SKILLS ==================== -->
+<section id="skills" class="sec" style="background:var(--bg2);">
+  <div class="wrap">
+    <div class="sec-tag">What I Do</div>
+    <h2 class="sec-h">My <span>Skills</span></h2>
+    <p class="sec-sub">Creative and technical expertise honed through real-world projects and continuous learning.</p>
+    <!--
+      ============================================================
+      SKILLS:
+      Edit inside .skills-grid — change name, icon, and data-pct value.
+      ============================================================
+    -->
+    <div class="skills-grid" id="skillsGrid"></div>
+  </div>
+</section>
+
+<!-- ==================== PROJECTS ==================== -->
+<section id="projects" class="sec">
+  <div class="wrap">
+    <div class="sec-tag">My Work</div>
+    <h2 class="sec-h">Featured <span>Projects</span></h2>
+    <p class="sec-sub">Click any project card to watch the video directly. Thumbnails load automatically from YouTube.</p>
+    <div class="cards-grid" id="projectsGrid"></div>
+  </div>
+</section>
+
+<!-- ==================== APPS ==================== -->
+<section id="apps" class="sec" style="background:var(--bg2);">
+  <div class="wrap">
+    <div class="sec-tag">Download</div>
+    <h2 class="sec-h">My <span>Apps</span></h2>
+    <p class="sec-sub">Android apps built by Asif. Tap the download button to get the APK file directly.</p>
+    <div class="apps-grid" id="appsGrid"></div>
+  </div>
+</section>
+
+<!-- ==================== COURSES ==================== -->
+<section id="courses" class="sec">
+  <div class="wrap">
+    <div class="sec-tag">Learn & Grow</div>
+    <h2 class="sec-h">Courses & <span>Services</span></h2>
+    <p class="sec-sub">Click to watch previews. Professional skills taught by Asif — from beginner to pro level.</p>
+    <div class="cards-grid" id="coursesGrid"></div>
+  </div>
+</section>
+
+<!-- ==================== GALLERY ==================== -->
+<section id="gallery" class="sec" style="background:var(--bg2);">
+  <div class="wrap">
+    <div class="sec-tag">Creative Portfolio</div>
+    <h2 class="sec-h">Image & Video <span>Gallery</span></h2>
+    <div class="g-grid" id="galleryGrid"></div>
+  </div>
+</section>
+
+<!-- ==================== CONTACT ==================== -->
+<section id="contact" class="sec">
+  <div class="wrap">
+    <div class="sec-tag">Get In Touch</div>
+    <h2 class="sec-h">Contact <span>Me</span></h2>
+    <div class="contact-grid">
+
+      <!-- Info -->
+      <div class="c-info rv">
+        <p style="color:var(--txt2);font-size:.9rem;line-height:1.75;">Want to collaborate or have a question? Reach out directly — I'm always open to new projects and creative partnerships.</p>
+
+        <div class="c-row">
+          <div class="c-ico"><i class="fa-solid fa-phone"></i></div>
+          <div>
+            <div class="c-lbl">Phone / Call</div>
+            <div class="c-val"><a href="tel:+8801887711147">+880 1887 711 147</a></div>
+          </div>
+        </div>
+
+        <div class="c-row">
+          <div class="c-ico"><i class="fa-solid fa-envelope"></i></div>
+          <div>
+            <div class="c-lbl">Email</div>
+            <div class="c-val"><a href="mailto:asrafulsheikhasif143@gmail.com">asrafulsheikhasif143@gmail.com</a></div>
+          </div>
+        </div>
+
+        <div class="c-row">
+          <div class="c-ico"><i class="fa-solid fa-location-dot"></i></div>
+          <div>
+            <div class="c-lbl">Location</div>
+            <div class="c-val">Bangladesh</div>
+          </div>
+        </div>
+
+        <!-- Quick action buttons -->
+        <div class="c-links">
+          <a href="tel:+8801887711147" class="c-link"><i class="fa-solid fa-phone"></i>Call Now</a>
+          <a href="mailto:asrafulsheikhasif143@gmail.com" class="c-link em"><i class="fa-solid fa-envelope"></i>Email</a>
+          <a href="https://wa.me/8801887711147?text=Hi%20Asif%2C%20I%20saw%20your%20portfolio%20and%20want%20to%20connect!" target="_blank" class="c-link wa"><i class="fa-brands fa-whatsapp"></i>WhatsApp</a>
+          <a href="https://www.facebook.com/share/1CFaGRrkEP/" target="_blank" class="c-link"><i class="fa-brands fa-facebook-f"></i>Facebook</a>
+          <a href="https://www.instagram.com/1___asif___1" target="_blank" class="c-link"><i class="fa-brands fa-instagram"></i>Instagram</a>
+          <a href="https://www.youtube.com/@asifbro143" target="_blank" class="c-link"><i class="fa-brands fa-youtube"></i>YouTube</a>
+          <a href="https://x.com/1___asif___1" target="_blank" class="c-link"><i class="fa-brands fa-x-twitter"></i>Twitter</a>
+          <a href="https://tiktok.com/@asifbro143" target="_blank" class="c-link"><i class="fa-brands fa-tiktok"></i>TikTok</a>
+        </div>
+      </div>
+
+      <!-- Form -->
+      <div class="c-form rv">
+        <div class="f-grp">
+          <label for="fName">Your Name</label>
+          <input type="text" id="fName" class="f-input" placeholder="Enter your name">
+        </div>
+        <div class="f-grp">
+          <label for="fEmail">Your Email</label>
+          <input type="email" id="fEmail" class="f-input" placeholder="Enter your email address">
+        </div>
+        <div class="f-grp">
+          <label for="fMsg">Message</label>
+          <textarea id="fMsg" class="f-ta" placeholder="Write your message here..."></textarea>
+        </div>
+        <div id="fFeedback" class="f-msg"></div>
+        <button class="f-submit" onclick="sendMail()">
+          <i class="fa-solid fa-paper-plane" style="margin-right:.45rem"></i>Send Message
+        </button>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ==================== FOOTER ==================== -->
+<footer>
+  <div class="foot-inner">
+    <div class="foot-brand">
+      <div class="foot-logo">Asraful Sheikh Asif</div>
+      <div class="foot-copy">Copyright &copy; 2026 Asraful Sheikh Asif. All rights reserved.</div>
+    </div>
+    <div class="foot-soc">
+      <a href="https://www.youtube.com/@asifbro143" target="_blank" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+      <a href="https://www.facebook.com/share/1CFaGRrkEP/" target="_blank" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+      <a href="https://www.instagram.com/1___asif___1" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+      <a href="https://x.com/1___asif___1" target="_blank" title="Twitter / X"><i class="fa-brands fa-x-twitter"></i></a>
+      <a href="https://tiktok.com/@asifbro143" target="_blank" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+      <a href="https://wa.me/8801887711147" target="_blank" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+    </div>
+  </div>
+</footer>
+
+<!-- Scroll-to-top -->
+<button id="stt" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top">
+  <i class="fa-solid fa-chevron-up"></i>
+</button>
+
+
+<!-- ============================================================
+     ALL DATA & LOGIC — Edit the DATA arrays to customise content
+     ============================================================ -->
+<script>
+
+/* ============================================================
+   SLIDER DATA
+   Add/remove objects to change slides.
+   src: image filename (place in same folder as index.html)
+   caption: text shown on the slide
+   ============================================================ */
+const SLIDER_DATA = [
+  { src: "asif2.jpg", caption: "Creative Vision" },
+  { src: "asif3.jpg", caption: "Design & Art" },
+  { src: "asif4.jpg", caption: "3D Animation" },
+  { src: "asif5.jpg", caption: "Content Creation" },
+];
+
+/* ============================================================
+   SKILLS DATA
+   name: skill name
+   icon: Font Awesome icon class (fa-solid fa-xxx)
+   pct: percentage 0–100
+   ============================================================ */
+const SKILLS_DATA = [
+  { name:"Video Editing",        icon:"fa-solid fa-film",       pct:90 },
+  { name:"Graphics Design",      icon:"fa-solid fa-pen-nib",    pct:88 },
+  { name:"Blender 3D Animation", icon:"fa-solid fa-cube",       pct:80 },
+  { name:"Web Design",           icon:"fa-solid fa-globe",      pct:75 },
+  { name:"AI Art Generation",    icon:"fa-solid fa-robot",      pct:85 },
+  { name:"Digital Marketing",    icon:"fa-solid fa-chart-line", pct:78 },
+];
+
+/* ============================================================
+   PROJECTS DATA
+   videoId: YouTube video ID (e.g. "dQw4w9WgXcQ")
+            → thumbnail loads automatically
+            → leave "" to show placeholder icon
+   link: URL that opens when card is clicked
+   ============================================================ */
+const PROJECTS_DATA = [
+  {
+    title:   "3D Animation Showreel",
+    cat:     "3D Animation",
+    desc:    "Stunning 3D animations created with Blender — characters, environments, and visual effects.",
+    videoId: "",   // ← Paste YouTube video ID here, e.g. "abc123XYZ"
+    link:    "https://www.youtube.com/@asifbro143"
+  },
+  {
+    title:   "Video Edit Compilation",
+    cat:     "Video Editing",
+    desc:    "Professional video edits with cinematic color grading, transitions, and motion graphics.",
+    videoId: "",   // ← Paste YouTube video ID here
+    link:    "https://www.youtube.com/@asifbro143"
+  },
+  {
+    title:   "Future App Projects",
+    cat:     "App Development",
+    desc:    "Upcoming mobile apps in development — tournament management and e-commerce solutions.",
+    videoId: "",
+    link:    "https://www.youtube.com/@asifbro143"
+  },
+  {
+    title:   "Digital Marketing Campaign",
+    cat:     "Marketing",
+    desc:    "Full-scale digital marketing campaigns — social media growth, content strategy & brand building.",
+    videoId: "",
+    link:    "https://www.youtube.com/@asifbro143"
+  },
+];
+
+/* ============================================================
+   APPS DATA
+   apk: filename of the APK (place in same folder as index.html)
+   icon: Font Awesome icon class
+   grad: CSS gradient string
+   ============================================================ */
+const APPS_DATA = [
+  {
+    name:  "Tournament App",
+    desc:  "Manage esports tournaments, track brackets, register teams, and follow live match results — all from your Android device. Built for competitive gamers.",
+    icon:  "fa-solid fa-trophy",
+    grad:  "linear-gradient(135deg,#00e5b0,#7c3aed)",
+    tags:  ["Android","eSports","Free"],
+    apk:   "esports_journey.apk"
+  },
+  {
+    name:  "Top-Up App",
+    desc:  "Fast and secure game currency top-up platform. Recharge your favourite games instantly with multiple payment options and real-time transaction tracking.",
+    icon:  "fa-solid fa-gem",
+    grad:  "linear-gradient(135deg,#f59e0b,#ef4444)",
+    tags:  ["Android","Gaming","Free"],
+    apk:   "asif_topup.apk"
+  },
+];
+
+/* ============================================================
+   COURSES DATA
+   badge: "Course" | "Service" | "Coming Soon"
+   videoId: YouTube video ID → thumbnail auto-loads
+   link: URL opened on click
+   ============================================================ */
+const COURSES_DATA = [
+  {
+    title:   "3D Animation with Blender",
+    badge:   "Course",
+    desc:    "Learn 3D modeling and animation from scratch using Blender. From basics to advanced rendering.",
+    videoId: "",   // ← Paste YouTube video ID here
+    link:    "https://www.youtube.com/@asifbro143"
+  },
+  {
+    title:   "Video Editing Mastery",
+    badge:   "Course",
+    desc:    "Professional video editing techniques — cuts, transitions, color grading, motion effects and more.",
+    videoId: "",
+    link:    "https://www.youtube.com/@asifbro143"
+  },
+  {
+    title:   "App Making Guide",
+    badge:   "Service",
+    desc:    "Step-by-step guide to building your own Android apps. Tools, workflow, no-code to low-code.",
+    videoId: "",
+    link:    "https://www.youtube.com/@asifbro143"
+  },
+  {
+    title:   "Digital Marketing Skills",
+    badge:   "Course",
+    desc:    "Grow your brand online — social media strategy, content creation, SEO, and paid advertising.",
+    videoId: "",
+    link:    "https://www.youtube.com/@asifbro143"
+  },
+  {
+    title:   "Future App Projects",
+    badge:   "Coming Soon",
+    desc:    "Exclusive behind-the-scenes look at upcoming app development projects. Stay tuned.",
+    videoId: "",
+    link:    "https://www.youtube.com/@asifbro143"
+  },
+];
+
+/* ============================================================
+   GALLERY DATA
+   type:  "image"   → src = filename.jpg / .png / .webp
+          "video"   → src = filename.mp4 (place in same folder)
+          "youtube" → src = YouTube video ID only
+   caption: label shown on hover
+   ============================================================ */
+const GALLERY_DATA = [
+  { type:"image",   src:"asif2.jpg", caption:"Creative Shot" },
+  { type:"image",   src:"asif3.jpg", caption:"Design Work"   },
+  { type:"image",   src:"asif4.jpg", caption:"3D Art"        },
+  { type:"image",   src:"asif5.jpg", caption:"Content"       },
+  // { type:"youtube", src:"VIDEO_ID",  caption:"My Reel"      },
+  // { type:"video",   src:"clip.mp4",  caption:"Short Film"   },
+];
+
+
+/* ============================================================
+   ======  RENDER FUNCTIONS — no need to edit below  ==========
+   ============================================================ */
+
+/* --- Loader --- */
+window.addEventListener('load', () => {
+  setTimeout(() => document.getElementById('loader').classList.add('out'), 1400);
+});
+
+/* --- Theme --- */
+const html = document.documentElement;
+const tBtn = document.getElementById('themeBtn');
+const tIco = document.getElementById('themeIco');
+function setTheme(t) {
+  html.setAttribute('data-theme', t);
+  tIco.className = t === 'dark' ? 'fa-solid fa-moon' : 'fa-solid fa-sun';
+  localStorage.setItem('asif-theme', t);
+}
+tBtn.addEventListener('click', () => setTheme(html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark'));
+const sv = localStorage.getItem('asif-theme');
+if (sv) setTheme(sv);
+
+/* --- Mobile nav --- */
+const hbgBtn = document.getElementById('hbg');
+const mobNav = document.getElementById('mobNav');
+hbgBtn.addEventListener('click', () => mobNav.classList.toggle('open'));
+mobNav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobNav.classList.remove('open')));
+
+/* --- Scroll top --- */
+const sttBtn = document.getElementById('stt');
+window.addEventListener('scroll', () => sttBtn.classList.toggle('show', window.scrollY > 380));
+
+/* --- Slider --- */
+let si = 0, autoS;
+const slidesEl = document.getElementById('slides');
+const dotsEl = document.getElementById('sDots');
+
+function buildSlider() {
+  slidesEl.innerHTML = SLIDER_DATA.map(s => `
+    <div class="slide">
+      <img src="${s.src}" alt="${s.caption}" onerror="this.style.display='none'">
+      <div class="slide-shade"></div>
+      <div class="slide-cap">${s.caption}</div>
+    </div>`).join('');
+  dotsEl.innerHTML = SLIDER_DATA.map((_, i) =>
+    `<div class="s-dot${i===0?' on':''}" onclick="goSlide(${i})"></div>`
+  ).join('');
+}
+function goSlide(n) {
+  si = (n + SLIDER_DATA.length) % SLIDER_DATA.length;
+  slidesEl.style.transform = `translateX(-${si * 100}%)`;
+  dotsEl.querySelectorAll('.s-dot').forEach((d,i) => d.classList.toggle('on', i===si));
+}
+document.getElementById('sPrev').addEventListener('click', () => { goSlide(si-1); resetSlider(); });
+document.getElementById('sNext').addEventListener('click', () => { goSlide(si+1); resetSlider(); });
+function startSlider() { autoS = setInterval(() => goSlide(si+1), 4200); }
+function resetSlider() { clearInterval(autoS); startSlider(); }
+buildSlider();
+startSlider();
+
+/* --- Skills --- */
+function buildSkills() {
+  document.getElementById('skillsGrid').innerHTML = SKILLS_DATA.map(s => `
+    <div class="sk-card rv">
+      <div class="sk-ico"><i class="${s.icon}"></i></div>
+      <div class="sk-name">${s.name}</div>
+      <div class="sk-row"><span>Proficiency</span><span>${s.pct}%</span></div>
+      <div class="sk-bar-bg"><div class="sk-bar" data-pct="${s.pct}"></div></div>
+    </div>`).join('');
+  reObserve();
+}
+buildSkills();
+
+/* --- Projects --- */
+function buildProjects() {
+  document.getElementById('projectsGrid').innerHTML = PROJECTS_DATA.map(p => {
+    const th = p.videoId ? `<img src="https://img.youtube.com/vi/${p.videoId}/hqdefault.jpg" alt="${p.title}" loading="lazy">` :
+      `<div class="no-thumb"><i class="fa-solid fa-video"></i><span>Preview Coming Soon</span></div>`;
+    return `
+    <div class="p-card rv" onclick="window.open('${p.link}','_blank')">
+      <div class="p-thumb">${th}<div class="p-play"><div class="play-circle"><i class="fa-solid fa-play"></i></div></div></div>
+      <div class="p-info">
+        <div class="p-cat">${p.cat}</div>
+        <div class="p-title">${p.title}</div>
+        <div class="p-desc">${p.desc}</div>
+      </div>
+    </div>`;
+  }).join('');
+  reObserve();
+}
+buildProjects();
+
+/* --- Apps --- */
+function buildApps() {
+  document.getElementById('appsGrid').innerHTML = APPS_DATA.map(a => `
+    <div class="app-card rv">
+      <div class="app-ico" style="background:${a.grad}"><i class="${a.icon}"></i></div>
+      <div class="app-name">${a.name}</div>
+      <div class="app-desc">${a.desc}</div>
+      <div class="app-tags">${a.tags.map(t=>`<span class="app-tag">${t}</span>`).join('')}</div>
+      <a href="${a.apk}" download="${a.apk}" class="dl-btn" style="background:${a.grad}">
+        <i class="fa-solid fa-download"></i>Download APK
+      </a>
+    </div>`).join('');
+  reObserve();
+}
+buildApps();
+
+/* --- Courses --- */
+function buildCourses() {
+  document.getElementById('coursesGrid').innerHTML = COURSES_DATA.map(c => {
+    const th = c.videoId ? `<img src="https://img.youtube.com/vi/${c.videoId}/hqdefault.jpg" alt="${c.title}" loading="lazy">` :
+      `<div class="no-thumb" style="height:100%"><i class="fa-solid fa-graduation-cap" style="color:var(--accent)"></i><span>Preview Coming Soon</span></div>`;
+    return `
+    <div class="p-card rv" onclick="window.open('${c.link}','_blank')" style="--hc:var(--accent)">
+      <div class="p-thumb">${th}<div class="p-play"><div class="play-circle"><i class="fa-solid fa-play"></i></div></div></div>
+      <div class="p-info">
+        <div class="p-cat" style="color:var(--accent)">${c.badge}</div>
+        <div class="p-title">${c.title}</div>
+        <div class="p-desc">${c.desc}</div>
+      </div>
+    </div>`;
+  }).join('');
+  reObserve();
+}
+buildCourses();
+
+/* --- Gallery --- */
+function buildGallery() {
+  document.getElementById('galleryGrid').innerHTML = GALLERY_DATA.map(item => {
+    let media = '';
+    if (item.type === 'youtube') {
+      media = `<img src="https://img.youtube.com/vi/${item.src}/hqdefault.jpg" alt="${item.caption}" loading="lazy">`;
+    } else if (item.type === 'video') {
+      media = `<video src="${item.src}" muted loop preload="none" onmouseenter="this.play()" onmouseleave="this.pause()"></video>`;
+    } else {
+      media = `<img src="${item.src}" alt="${item.caption}" loading="lazy" onerror="this.parentElement.style.background='var(--bg3)'">`;
+    }
+    const yt = item.type === 'youtube' ? `onclick="window.open('https://youtube.com/watch?v=${item.src}','_blank')"` : '';
+    return `
+    <div class="g-item rv" ${yt}>
+      ${media}
+      <div class="g-over">
+        <i class="fa-solid fa-${item.type==='youtube'?'play-circle':'expand'}"></i>
+        <span>${item.caption}</span>
+      </div>
+    </div>`;
+  }).join('');
+  reObserve();
+}
+buildGallery();
+
+/* --- Contact Form --- */
+function sendMail() {
+  const n = document.getElementById('fName').value.trim();
+  const e = document.getElementById('fEmail').value.trim();
+  const m = document.getElementById('fMsg').value.trim();
+  const fb = document.getElementById('fFeedback');
+  if (!n || !e || !m) { fb.textContent = 'Please fill in all fields.'; fb.className = 'f-msg err'; return; }
+  if (!/\S+@\S+\.\S+/.test(e)) { fb.textContent = 'Please enter a valid email address.'; fb.className = 'f-msg err'; return; }
+  const s = encodeURIComponent(`Portfolio Contact: ${n}`);
+  const b = encodeURIComponent(`Name: ${n}\nEmail: ${e}\n\nMessage:\n${m}`);
+  window.open(`mailto:asrafulsheikhasif143@gmail.com?subject=${s}&body=${b}`, '_blank');
+  fb.textContent = 'Your email client is open. Thank you for getting in touch!';
+  fb.className = 'f-msg ok';
+  document.getElementById('fName').value = '';
+  document.getElementById('fEmail').value = '';
+  document.getElementById('fMsg').value = '';
+}
+
+/* --- Intersection Observer (reveal + skill bars) --- */
+const rv = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (!e.isIntersecting) return;
+    e.target.classList.add('on');
+    // animate skill bars when visible
+    e.target.querySelectorAll('.sk-bar').forEach(b => b.style.width = b.dataset.pct + '%');
+  });
+}, { threshold: 0.12 });
+
+function reObserve() {
+  document.querySelectorAll('.rv:not(.on)').forEach(el => rv.observe(el));
+}
+reObserve();
+</script>
+</body>
+</html>
